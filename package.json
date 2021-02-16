@@ -13,7 +13,8 @@
     "@types/node": "^14.14.28"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "ts-node app.ts",
+    "watch": "nodemon app.ts"
   },
   "repository": {
     "type": "git",
