@@ -1,11 +1,15 @@
 import conf from "../../config.json";
 import { windowsScript } from "./windows/script";
+import { linuxScript } from "./linux/script";
 import { ChildProcess, exec } from "child_process";
 
 let pid: ChildProcess;
+let isWin = process.platform === "win32";
 
 export default function startValheim() {
-  pid = exec(`cd /D "${conf.path}" && ${windowsScript}`);
+  pid = exec(
+    `${isWin ? `cd /D "${conf.path}" && ${windowsScript}` : `${linuxScript}`}`
+  );
 
   if (pid.stdout)
     pid.stdout.on("data", (data) => {

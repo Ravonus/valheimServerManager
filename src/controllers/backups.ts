@@ -3,8 +3,12 @@ import { wait } from "../modules/wait";
 
 const copydir = require("copy-dir");
 
+function getUserHome() {
+  return process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
+}
+
 export default async function backup() {
-  const path = `C:\\${process.env.HOMEPATH}/AppData/LocalLow/IronGate/Valheim/worlds/`;
+  const path = `${getUserHome()}/AppData/LocalLow/IronGate/Valheim/worlds/`;
 
   await copydir.sync(path, `./backups`, {
     utimes: true,
@@ -16,7 +20,7 @@ export default async function backup() {
     },
   });
 
-  await wait(conf.interval * 60);
+  await wait(conf.interval * 60000);
   backup();
 }
 
