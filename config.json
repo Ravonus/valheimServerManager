@@ -1,5 +1,4 @@
 {
-  "server": "F:\\SteamLibrary\\steamapps\\common\\Valheim dedicated server\\start_headless_server.bat",
   "path": "F:\\SteamLibrary\\steamapps\\common\\Valheim dedicated server",
   "interval": 15,
   "port": 2456,

@@ -4,11 +4,15 @@ import { wait } from "../modules/wait";
 const copydir = require("copy-dir");
 
 function getUserHome() {
-  return process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
+  return `${process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"]}${
+    process.platform === "win32"
+      ? "/AppData/LocalLow/IronGate/Valheim/worlds/"
+      : "/.config/unity3d/IronGate/Valheim"
+  }`;
 }
 
 export default async function backup() {
-  const path = `${getUserHome()}/AppData/LocalLow/IronGate/Valheim/worlds/`;
+  const path = getUserHome();
 
   await copydir.sync(path, `./backups`, {
     utimes: true,

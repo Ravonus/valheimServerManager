@@ -13,7 +13,7 @@ export SteamAppId=892970
 # NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.
 /home/steam/steamcmd.sh +login anonymous +force_install_dir /home/steam/Valheim +app_update 896660 +quit
 
-./valheim_server.x86_64 -name "${conf.server || "Server"}" -port ${
+./valheim_server.x86_64 -name "${conf.name || "Server"}" -port ${
   conf.port || 2456
 } -world "${conf.world || "Dedicated"}" -password "${
   conf.password || "Frogger"

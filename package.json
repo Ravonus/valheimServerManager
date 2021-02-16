@@ -1,0 +1,28 @@
+{
+  "name": "valheim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "copy-dir": "^1.3.0",
+    "kill-port": "^1.6.1",
+    "repeat": "^2.0.3",
+    "respawn": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.28"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ravonus/valheimServerManager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ravonus/valheimServerManager/issues"
+  },
+  "homepage": "https://github.com/Ravonus/valheimServerManager#readme"
+}
