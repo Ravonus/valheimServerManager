@@ -7,7 +7,7 @@ function getUserHome() {
   return `${process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"]}${
     process.platform === "win32"
       ? "/AppData/LocalLow/IronGate/Valheim/worlds/"
-      : "/.config/unity3d/IronGate/Valheim"
+      : "/.config/unity3d/IronGate/Valheim/worlds/"
   }`;
 }
 
